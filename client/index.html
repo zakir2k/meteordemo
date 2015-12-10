@@ -1,0 +1,31 @@
+<head>
+  <title>Flower Shop</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/css/uikit.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.2/js/components/grid.min.js"></script>
+</head>
+
+<body>
+  <h1>Welcome to the Flower Shop</h1>
+  {{> flowers}}
+</body>
+
+<template name="flowers">
+  <div data-uk-grid>
+   {{#each flowers}}
+  	{{> product}}
+   {{/each}}
+  </div>
+</template>
+
+<template name="product">
+    <div class="uk-center uk-text-center uk-width-small-1-2 uk-width-medium-1-4 uk-width-large-1-4">
+      <img src="{{this.image}}" class="uk-responsive-height">
+  	    <h3>Flower {{this.index}}</h3>
+  		  <p>Name: {{this.name}}</p>
+  		  <p>Price: {{this.price}}</p>
+  		  <p>Color: {{this.color}}</p>
+	  	<a class="buy uk-button uk-button-large">Buy Now</a>
+    </div>
+</template>
+
